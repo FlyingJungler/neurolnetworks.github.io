@@ -1,0 +1,643 @@
+
+body {
+    background-color: #DAF0EE
+  }
+
+.dark-mode {
+  background-color: #292F4F;
+  color: black;
+}
+
+
+
+
+
+*{
+padding: 0;
+margin: 0;
+text-decoration: none;
+list-style: none;
+box-sizing: border-box;
+}
+
+nav{
+background-color: white;
+border: 5px solid white;
+border-radius: 30px;
+box-shadow: 1px 1px 1px black;
+height: 80px;
+width: 100%;
+}
+label.logo{
+color: #7432C3;
+font-size: 35px;
+line-height: 80px;
+padding: 0 10px;
+font-weight: bold;
+}
+nav ul{
+float: right;
+margin-right: 20px;
+}
+nav ul li{
+display: inline-block;
+line-height: 80px;
+margin: 0 5px;
+
+}
+nav ul li a{
+color: black;
+font-size: 17px;
+padding: 7px 13px;
+border-radius: 3px;
+
+}
+a.active,a:hover{
+
+transition: .5s;
+border-bottom: 8px solid #7432C3;
+}
+.checkbtn{
+font-size: 30px;
+color: #7432C3;
+float: right;
+line-height: 80px;
+margin-right: 40px;
+cursor: pointer;
+display: none;
+}
+#check{
+display: none;
+}
+@media (max-width: 952px){
+label.logo{
+  font-size: 30px;
+  padding-left: 50px;
+}
+nav ul li a{
+  font-size: 16px;
+}
+}
+@media (max-width: 858px){
+.checkbtn{
+  display: block;
+}
+ul{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #2c3e50;
+  
+  border-radius: 30px;
+  top: 80px;
+  left: -100%;
+  text-align: center;
+  transition: all .5s;
+  z-index: 5;
+}
+nav ul li{
+  display: block;
+  margin: 50px 0;
+  line-height: 30px;
+}
+nav ul li a{
+  font-size: 20px;
+}
+a:hover,a.active{
+  background: none;
+  color: #7432C3;
+  border-bottom: 5px solid #7432C3;
+}
+#check:checked ~ ul{
+  left: 0;
+}
+}
+section{
+background: url(logo.jpg) no-repeat;
+background-size: cover;
+height: calc(100vh - 80px);
+}
+
+
+
+  input[type=text], select, textarea {
+    width:450px;
+    height:75px;
+    padding: 10px;
+    border: 4px solid #7432C3;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin-top: 8px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    resize: vertical;
+    float: left;
+    text-align: center;
+    font-size: 25px;
+  }
+  
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 20px 53px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  .containerform {
+    border-radius: 5px;
+    background-color: red;
+    margin: auto;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+  
+  }
+
+
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 620;
+    background-color: #7432C3;
+    top: -40;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    z-index: -1;
+    
+
+  }
+  
+  /* Container around content */
+  .container1 {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    
+  }
+
+
+  
+  /* The circles on the timeline */
+  .container1::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 3px solid #7432C3;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  .left {
+    left: 0;
+  }
+  
+  /* Place the container to the right */
+  .right {
+    left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid #7432C3;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #7432C3;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid #7432C3;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #7432C3 transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: -13px;
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 20px;
+ 
+    background-color: white;
+    border: 3px solid #7432C3;
+    box-shadow: 2px 3px 5px;
+    position: relative;
+    border-radius: 6px;
+    
+    
+  }
+  
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+    .timeline::after {
+      left: 50%;
+    }
+  
+  /* Full-width containers */
+    .container1 {
+      width: 100%;
+      padding-left: 30px;
+      padding-right: 25px;
+      
+  
+    }
+  
+  /* Make sure that all arrows are pointing leftwards */
+    .container1::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+  
+  /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+      right: 31px;
+      z-index: -5
+    }
+  
+  /* Make all right containers behave like the left ones */
+    .right {
+      left: 0%;
+      z-index: -5
+    }
+  }
+  
+
+  .navbar a:hover {
+    border-bottom: 5px solid #7432C3;   
+  }
+  
+  .navbar  a.active {
+    border-bottom: 5px solid #7432C3;
+  }
+
+  @media screen and (max-width: 500px) {
+    .navbar a {
+      float: none;
+      display: block;
+      width: 100%;
+      text-align: left;
+    }
+  }
+
+.howitworks {
+  width: 25%;
+  background-color: #7432C3;
+  border: 5px solid #7432C3;
+  border-radius: 24px;
+  box-shadow: 2px 3px 5px black;
+  color: white;
+  margin: auto;
+  margin-top: 20;
+  font-size: 40;
+  text-align:  center;
+}
+
+.img{
+	text-align: center;
+	margin-top: 20px;
+  
+
+} 
+
+
+
+.circle {
+  background: #FFCF9E;
+  border-radius: 50%;
+  width: 165px;
+  height: 165px;
+  border: 5px solid black;
+  margin-left: 17%;
+}
+
+@media screen and (max-width: 800px) {
+.circle{
+    border-radius: 0;
+    width: 20px;
+    height:20px;
+    
+    margin-left: 70 ;
+    margin-bottom: -185;
+    padding-top: 30%;
+    border: 2px solid black;
+
+  }
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 3px;
+  
+  margin: auto;
+  border: 5px solid #7432C3;
+  border-radius: 24px;
+  background-color: white;
+  width: 90%;
+}
+
+.Neuralnetworks {
+  width: 18%;
+  color: white;
+  background-color: #7432C3;
+  box-shadow: 2px 3px 5px black;
+  border: 5px solid #7432C3;
+  border-radius: 24px;
+  margin: auto;
+  margin-top: 20px;
+  text-align:  center;
+  font-size: 30;
+}
+
+@media screen and (max-width: 600px) {
+  .Neuralnetworks{
+
+    width:400px;
+  }
+}
+
+.inputtext {
+  width: 40%;
+  padding: 10px;
+  background-color: white;
+  border: 5px solid #7432C3;
+  border-radius: 24px;
+  margin-top: -150;
+  margin-left: 29%;
+  margin-bottom: 25;
+  box-shadow: 2px 3px 5px black;
+  text-align:  left;
+  font-size: 20;
+}
+
+@media screen and (max-width: 800px) {
+  .inputtext{
+
+    width:400px;
+    margin-left: 100;
+  }
+}
+
+
+
+
+
+.refer {
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border: 5px solid #7432C3;
+  border-radius: 24px;
+  margin-top: 30;
+
+  text-align:  left;
+  font-size: 20;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+
+  @keyframes fadeInUp {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+  
+  .fadeInUp-animation {
+    animation: 1s fadeInUp;
+  }
+
+
+/*=== Trigger  ===*/
+.animate {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  
+    
+  /*=== Optional Delays, change values here  ===*/
+  .one {
+  -webkit-animation-delay: 0.5s;
+  -moz-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  }
+
+/*=== FADE IN UP Big ===*/
+.fadeInUpBig {
+    -webkit-animation-name: fadeInUpBig;
+    animation-name: fadeInUpBig;
+    }
+  @-webkit-keyframes fadeInUpBig {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 2000px, 0);
+      transform: translate3d(0, 2000px, 0);
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+      }
+  }
+  @keyframes fadeInUpBig {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 2000px, 0);
+      transform: translate3d(0, 2000px, 0);
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+      }
+  } 
+  
+  /*=== FADE IN DOWN Big ===*/
+  .fadeInDownBig {
+    -webkit-animation-name: fadeInDownBig;
+    animation-name: fadeInDownBig;
+  }
+  @-webkit-keyframes fadeInDownBig {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -2000px, 0);
+      transform: translate3d(0, -2000px, 0);
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+  }
+  }
+  @keyframes fadeInDownBig {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -2000px, 0);
+      transform: translate3d(0, -2000px, 0);
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+  }
+  } 
+
+
+  /*=== FADE IN LEFT ===*/
+@-webkit-keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(-100%, 0, 0);
+      transform: translate3d(-100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  .fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+  }
+  
+/*==== FADE IN RIGHT ===*/
+@-webkit-keyframes fadeInRight {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(100%, 0, 0);
+      transform: translate3d(100%, 0, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  .fadeInRight {
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }  
+
+  /*==== FADE IN UP ===*/
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+
+
